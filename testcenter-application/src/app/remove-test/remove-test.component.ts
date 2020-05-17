@@ -10,7 +10,7 @@ import { Form } from '@angular/forms';
   styleUrls: ['./remove-test.component.css']
 })
 export class RemoveTestComponent implements OnInit {
-
+//-----
   serviceObj:ServiceService;
   center:DiagnosticCenter;
   removed:boolean;
@@ -29,10 +29,7 @@ export class RemoveTestComponent implements OnInit {
     let cId=data.centerid;
     let tId=data.testid;
 
-    let dc=this.serviceObj.findByCenterId(cId);
-    dc.subscribe((dcenter:DiagnosticCenter)=>{
-      this.center=dcenter;
-    })
+   
     let result=this.serviceObj.removeTest(tId,cId);
     result.subscribe((variable:boolean)=>{
       this.removed=variable;
@@ -40,7 +37,10 @@ export class RemoveTestComponent implements OnInit {
     },err=>{this.dc=true;
       console.log("err in deleteing test="+err);
      })
-       
+     let dc=this.serviceObj.findByCenterId(cId);
+     dc.subscribe((dcenter:DiagnosticCenter)=>{
+       this.center=dcenter;
+     }) 
 
     
     form.reset();

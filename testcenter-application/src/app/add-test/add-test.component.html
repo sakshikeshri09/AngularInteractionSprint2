@@ -8,14 +8,14 @@
             <label>Center Id</label>
         </td>
         <td>
-            <input type="text"  name="centerId" ngModel required>
+            <input type="text"  name="centerId" ngModel required maxlength="20">
         </td>
     </tr><tr>
        <td>
         <label>Test Name</label>
        </td>
        <td>
-        <input type="text" name="testName" ngModel required>
+        <input type="text" name="testName" ngModel required maxlength="15">
        </td>
     </tr>
     <input type="submit" [disabled]="form.form.invalid"></div>
