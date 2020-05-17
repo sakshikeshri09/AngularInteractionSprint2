@@ -10,7 +10,7 @@ import { Form } from '@angular/forms';
   styleUrls: ['./remove-test.component.css']
 })
 export class RemoveTestComponent implements OnInit {
-//-----
+//--
   serviceObj:ServiceService;
   center:DiagnosticCenter;
   removed:boolean;
